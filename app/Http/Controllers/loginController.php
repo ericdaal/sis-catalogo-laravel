@@ -21,6 +21,6 @@ class loginController extends Controller
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
 
-        return redirect()->route('mantenimiento.index');
+        return redirect()->route('mantenimiento');
     }
 }

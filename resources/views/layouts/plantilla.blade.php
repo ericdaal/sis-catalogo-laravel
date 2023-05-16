@@ -4,17 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
-        <link rel="apple-touch-icon" href="{{asset('img/favicons/apple-touch-icon.png')}}" sizes="180x180">
-        <link rel="icon" href="{{asset('img/favicons/favicon-32x32.png')}}" sizes="32x32" type="image/png">
-        <link rel="icon" href="{{asset('img/favicons/favicon-16x16.png')}}" sizes="16x16" type="image/png">
-        <link rel="manifest" href="{{asset('js/manifest.json')}}">
-        <link rel="mask-icon" href="{{asset('img/favicons/safari-pinned-tab.svg')}}" color="#712cf9">
-        <link rel="icon" href="{{asset('img/favicons/favicon.ico')}}">
-        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-        <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <script src="{{ mix('js/app.js') }}" defer></script>
-        
     </head>
     <body class="bg-gray-100">
     <header class="p-5 border-b bg-white shadow">
@@ -46,10 +37,6 @@
             @yield('contenido')
      </main>
      <footer class="text-center p-5 text-gray-900 font-bold uppercase">
-        <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('js/feather.min.js')}}"></script>
-        <script src="{{asset('js/Chart.min.js')}}"></script>
-        <script src="{{asset('js/dashboard.js')}}"></script>
         Todos los derechos reservados {{ now()->year}}
      </footer>
 

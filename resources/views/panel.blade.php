@@ -1,8 +1,7 @@
 @extends('layouts.plantilla')
+@include('layouts.partials.boostrap-css')
 @section('titulo')
-
 @endsection
-
 @section('contenido')
 <div class="container-fluid">
     <div class="row">
@@ -155,3 +154,4 @@
     </div>
 </div>
 @endsection
+@include('layouts.partials.boostrap-js')
