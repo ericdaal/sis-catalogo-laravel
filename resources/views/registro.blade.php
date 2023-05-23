@@ -10,7 +10,7 @@
             <div class="md:w-5/12 bg-white p-6 rounded-lg shadow-xl">
                 <div class="mb-5">
                     <label id="name" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Nombre del Usuario
+                        Id de Usuario
                     </label>
                     <input id="name" name="name" type="text" placeholder="Nombre de usuario" class="border p-3 w-full rounded-lg
                     @error('name')

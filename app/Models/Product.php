@@ -8,15 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-
+    protected $table = 'products';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
         /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'codigo',
+        'code',
         'name',
         'price',
+        'brand',
+        'description',
+        'image',
     ];
 }

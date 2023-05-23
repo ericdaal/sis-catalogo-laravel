@@ -21,6 +21,11 @@ class loginController extends Controller
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
 
-        return redirect()->route('mantenimiento');
+        return redirect()->route('product');
+    }
+
+    public function test(Request $request)
+    {
+        return response()->json(['Mensaje'], 200);
     }
 }

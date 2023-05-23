@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\panelController;
 use App\Http\Controllers\inicioController;
-use App\Http\Controllers\mantenimientoController;
+use App\Http\Controllers\productController;
 use App\Http\Controllers\registroController;
 
 /*
@@ -25,7 +25,7 @@ Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'store']);
 Route::get('/panel', [panelController::class, 'index']);
 Route::post('/panel', [panelController::class, 'store']);
-Route::get('/mantenimiento', [mantenimientoController::class, 'index'])->name('mantenimiento');
-Route::post('/mantenimiento', [mantenimientoController::class, 'store']);
+Route::get('/product', [productController::class, 'index'])->name('product');
+Route::post('/product', [productController::class, 'store']);
 Route::get('/registro', [registroController::class, 'index'])->name('registro');
-Route::post('/registro', [registroController::class, 'store'])->name('registro');
+Route::post('/registro', [registroController::class, 'store']);

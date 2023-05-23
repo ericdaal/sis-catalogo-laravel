@@ -29,6 +29,6 @@ class registroController extends Controller
             'password' => Hash::make($request->password),
         ]);
         auth()->attempt($request->only('name','password'));
-        return redirect()->route('mantenimiento');
+        return redirect()->route('product');
     }
 }

@@ -5,20 +5,8 @@
 
 @section('contenido')
     <div >
-        <form class="md:flex md:justify-center md:gap-10 md:items-center" action="{{ route('mantenimiento') }}" method="POST" enctype="multipart/form-data">
+        <form class="md:flex md:justify-center md:gap-10 md:items-center" action="{{ route('product') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="md:w-6/12 pd-5 text-center">
-                <label class="form-label" for="inputImage">Select Image:</label><br>
-                <input 
-                    type="file" 
-                    name="image" 
-                    id="inputImage"
-                    class="form-control @error('image') is-invalid @enderror"
-                    value={{ old('image')}}>
-                @error('image')
-                <br><span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
             <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
                 <div class="mb-5">
                     <label id="id" class="mb-2 block uppercase text-gray-500 font-bold">
