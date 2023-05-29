@@ -17,7 +17,7 @@
             </a>
             @if (auth()->user())
             <nav class="flex gap-2 items-center">
-                <p class="p-3">Bienvenido: {{ auth()->user()->name}} |</p>
+                <p class="p-3">Bienvenido usuario : {{ auth()->user()->name}} |</p>
                 <a class="font-bold uppercase text-gray-900 text-sm" id='contact' href='/product'>Crear Producto |</a>
                 <a class="font-bold uppercase text-gray-900 text-sm" id='link' href='/panel'>Panel de Información |</a>
                 <a class="font-bold uppercase text-gray-900 text-sm" id='about' href='/login'>Cerrar Sesión |</a>

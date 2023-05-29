@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $table = 'products';
-    protected $primaryKey = 'id';
-    public $timestamps = true;
+    //protected $table = 'products';
+    //protected $primaryKey = 'id';
+    //public $timestamps = true;
         /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +22,5 @@ class Product extends Model
         'price',
         'brand',
         'description',
-        'image',
     ];
 }

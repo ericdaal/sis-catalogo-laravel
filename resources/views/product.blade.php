@@ -5,19 +5,19 @@
 
 @section('contenido')
     <div >
-        <form class="md:flex md:justify-center md:gap-10 md:items-center" action="{{ route('product') }}" method="POST" enctype="multipart/form-data">
+        <form class="md:flex md:justify-center md:gap-10 md:items-center" action="{{ route('product') }}" method="POST">
             @csrf
             <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
                 <div class="mb-5">
-                    <label id="id" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label id="code" class="mb-2 block uppercase text-gray-500 font-bold">
                         Codigo del producto
                     </label>
-                    <input id="id" name="id" type="text" placeholder="Códgo del producto" class="border p-3 w-full rounded-lg
-                    @error('id')
+                    <input id="code" name="code" type="text" placeholder="Códgo del producto" class="border p-3 w-full rounded-lg
+                    @error('code')
                     border-red-500    
                 @enderror"
-                value={{ old('id')}}>
-                @error('id')
+                value={{ old('code')}}>
+                @error('code')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                 @enderror
                 </div>

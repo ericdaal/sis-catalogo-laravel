@@ -17,7 +17,8 @@ class productController extends Controller
      */
     public function index()
     {
-        return view('product');
+        $product = Product::all();
+        return view('product.index', compact('product'));
     }
 
     /**
@@ -25,7 +26,7 @@ class productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
     }
@@ -38,9 +39,10 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'code' => 'required|unique:products',
-            'name' => 'required|unique:products',
+            'name' => 'required',
             'price' => 'required',
             'brand' => 'required',
             'description' => 'required',
