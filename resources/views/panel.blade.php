@@ -164,8 +164,11 @@
           </thead>
           <tbody>
               @foreach ($productos as $producto)
+              <form action="/panel" method="post">
+                @method('put')
+                {{ csrf_field() }}
               <tr class="text-wrap">
-                <td>{{$producto->id}}</td>
+                <td><input id="id" name="id" type="text" placeholder="{{$producto->id}}" value="{{$producto->id}}" class="border p-3 w-full rounded-lg"></td>
                 <td><input id="code" name="code" type="text" placeholder="{{$producto->code}}" value="{{$producto->code}}" class="border p-3 w-full rounded-lg"></td>
                 <td><input id="name" name="name" type="text" placeholder="{{$producto->name}}" value="{{$producto->name}}" class="border p-3 w-full rounded-lg"></td>
                 <td><input id="price" name="price" type="text" placeholder="{{$producto->price}}" value="{{$producto->price}}" class="border p-3 w-full rounded-lg"></td>
@@ -174,13 +177,19 @@
                 <td>{{$producto->created_at}}</td>
                 <td>
                   <div class="mb-1">
-                    <a class="btn btn-sm btn-outline-warning" href="/panel/edit/{{$producto->id}}">Editar</a>
-                  </div>
-                  <div class="mb-1">
-                    <a class="btn btn-sm btn-outline-danger" href="/panel/delete/{{$producto->id}}">Eliminar</a>
+                    <button class="btn btn-sm btn-outline-warning" type="submit">Editar</button>
                   </div>
                 </td>
-              </tr>
+              </form>
+              <td><div class="mb-1">
+                <form action="/panel/{{$producto->id}}" method="post">
+                  @method('delete')
+                  {{ csrf_field() }}
+                  <button class="btn btn-sm btn-outline-danger" type="submit">Eliminar</button>
+                </form>
+              </div>
+            </td>
+          </tr>
               @endforeach
           </tbody>
         </table>

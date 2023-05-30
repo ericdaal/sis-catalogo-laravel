@@ -35,7 +35,7 @@ class panelController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $id;
     }
 
         /**
@@ -45,9 +45,17 @@ class panelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $producto = Product::find($request->id);
+        $producto->code = $request->code; 
+        $producto->name = $request->name; 
+        $producto->price = $request->price; 
+        $producto->brand = $request->brand; 
+        $producto->description = $request->description; 
+        $producto->save();
+
+        return redirect()->route('panel');
     }
 
         /**
@@ -58,6 +66,9 @@ class panelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Product::find($id);
+        $producto->delete();
+
+        return redirect()->route('panel');
     }
 }

@@ -25,6 +25,8 @@ Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'store']);
 Route::get('/panel', [panelController::class, 'index'])->name('panel');
 Route::post('/panel', [panelController::class, 'store']);
+Route::put('/panel', [panelController::class, 'update']);
+Route::delete('/panel/{product}', [panelController::class, 'destroy']);
 Route::get('/product', [productController::class, 'index'])->name('product');
 Route::post('/product', [productController::class, 'store']);
 Route::get('/registro', [registroController::class, 'index'])->name('registro');
