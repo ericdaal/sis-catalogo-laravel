@@ -145,133 +145,43 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <!--canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas-->
 
-      <h2>Section title</h2>
+      <h2>Listado de Productos</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+              <th scope="col">Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Fecha de Creación</th>
+              <th scope="col">Operaciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
+              @foreach ($productos as $producto)
+              <tr class="text-wrap">
+                <td>{{$producto->id}}</td>
+                <td><input id="code" name="code" type="text" placeholder="{{$producto->code}}" value="{{$producto->code}}" class="border p-3 w-full rounded-lg"></td>
+                <td><input id="name" name="name" type="text" placeholder="{{$producto->name}}" value="{{$producto->name}}" class="border p-3 w-full rounded-lg"></td>
+                <td><input id="price" name="price" type="text" placeholder="{{$producto->price}}" value="{{$producto->price}}" class="border p-3 w-full rounded-lg"></td>
+                <td><input id="brand" name="brand" type="text" placeholder="{{$producto->brand}}" value="{{$producto->brand}}" class="border p-3 w-full rounded-lg"></td>
+                <td><input id="description" name="description" type="text" placeholder="{{$producto->description}}" value="{{$producto->description}}" class="border p-3 w-full rounded-lg"></td>
+                <td>{{$producto->created_at}}</td>
+                <td>
+                  <div class="mb-1">
+                    <a class="btn btn-sm btn-outline-warning" href="/panel/edit/{{$producto->id}}">Editar</a>
+                  </div>
+                  <div class="mb-1">
+                    <a class="btn btn-sm btn-outline-danger" href="/panel/delete/{{$producto->id}}">Eliminar</a>
+                  </div>
+                </td>
+              </tr>
+              @endforeach
           </tbody>
         </table>
       </div>

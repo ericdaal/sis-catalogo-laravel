@@ -733,6 +733,9 @@ video {
 .text-center {
   text-align: center;
 }
+.text-justify {
+  text-align: justify;
+}
 .align-text-bottom {
   vertical-align: text-bottom;
 }

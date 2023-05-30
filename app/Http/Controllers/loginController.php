@@ -21,7 +21,7 @@ class loginController extends Controller
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
 
-        return redirect()->route('product');
+        return redirect()->route('panel');
     }
 
     public function test(Request $request)
